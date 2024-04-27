@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://bh0jgcbqpdrmu"]
+
+[ext_resource type="Script" path="res://Scripts/espaco_de_jogo.gd" id="1_bmx7f"]
+[ext_resource type="PackedScene" uid="uid://bkae7mayp0h3a" path="res://Cenas/inimigo.tscn" id="2_3jqtd"]
+[ext_resource type="Texture2D" uid="uid://dgbukqo2rkqu8" path="res://Assets/Background/0.jpg" id="2_75nnq"]
+[ext_resource type="Texture2D" uid="uid://ciofrhdxtr8n3" path="res://Assets/Fundos/carta fundo exemplo.png" id="3_7470h"]
+[ext_resource type="Texture2D" uid="uid://b41eftrx1vumg" path="res://Assets/Fundos/carta fundo exemplo pressed.png" id="4_cy2c2"]
+[ext_resource type="Texture2D" uid="uid://cygg8i438c4bq" path="res://Assets/Fundos/CartaHover.png" id="5_aiy7f"]
+[ext_resource type="Texture2D" uid="uid://c7n5ul0iyg4mw" path="res://Assets/Fundos/carta fundo exemplo disabled.png" id="5_ymy8j"]
+[ext_resource type="Script" path="res://Scripts/DeckCava.gd" id="7_3ihys"]
+[ext_resource type="Texture2D" uid="uid://tjkxfqxhfyt1" path="res://Assets/Extras/CartaHover.png" id="9_b523k"]
+[ext_resource type="Script" path="res://Scripts/Cemiterio.gd" id="10_pnfwm"]
+
+[node name="EspacoDeJogo" type="Node2D"]
+script = ExtResource("1_bmx7f")
+
+[node name="EspacoDeCartas" type="Node" parent="."]
+
+[node name="Inimigos" type="Node" parent="."]
+
+[node name="Inimigo" parent="Inimigos" instance=ExtResource("2_3jqtd")]
+offset_left = 1433.0
+offset_top = 298.0
+offset_right = 1733.0
+offset_bottom = 698.0
+
+[node name="CartasEmJogo" type="Node" parent="."]
+
+[node name="Cartas" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(959, 540)
+texture = ExtResource("2_75nnq")
+
+[node name="Deck" type="Node" parent="."]
+
+[node name="DeckCava" type="TextureButton" parent="Deck"]
+offset_left = 65.0
+offset_top = 578.0
+offset_right = 415.0
+offset_bottom = 1078.0
+texture_normal = ExtResource("3_7470h")
+texture_pressed = ExtResource("4_cy2c2")
+texture_hover = ExtResource("5_aiy7f")
+texture_disabled = ExtResource("5_ymy8j")
+script = ExtResource("7_3ihys")
+
+[node name="Cemiterio" type="Node" parent="."]
+
+[node name="CemiterioButton" type="TextureButton" parent="Cemiterio"]
+offset_left = 1569.0
+offset_top = 826.0
+offset_right = 1919.0
+offset_bottom = 1326.0
+disabled = true
+texture_normal = ExtResource("9_b523k")
+texture_pressed = ExtResource("9_b523k")
+texture_hover = ExtResource("9_b523k")
+texture_disabled = ExtResource("9_b523k")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_pnfwm")
+
+[connection signal="pressed" from="Deck/DeckCava" to="Deck/DeckCava" method="_on_pressed"]

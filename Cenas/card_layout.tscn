@@ -1,0 +1,429 @@
+[gd_scene load_steps=15 format=3 uid="uid://iyajryh25q0a"]
+
+[ext_resource type="Script" path="res://Scripts/CardLayout.gd" id="1_mdpow"]
+[ext_resource type="Texture2D" uid="uid://dloeky3us4mvj" path="res://Assets/Ilustracoes/heroi/Amin.jpg" id="2_iwx14"]
+[ext_resource type="Texture2D" uid="uid://d3qaicfy56uk8" path="res://Assets/Cartas/carta frente.png" id="3_dbqi0"]
+[ext_resource type="Texture2D" uid="uid://rm047dbn07fg" path="res://Assets/Extras/atq_symbol.png" id="4_dsosr"]
+[ext_resource type="Texture2D" uid="uid://cik8265tmrljd" path="res://Assets/Extras/under.png" id="5_3ktck"]
+[ext_resource type="Texture2D" uid="uid://c8vynxqfjn3ky" path="res://Assets/Extras/over.png" id="6_l2kxk"]
+[ext_resource type="Texture2D" uid="uid://byo3ksv7vx7lf" path="res://Assets/Extras/progress.png" id="7_v0aqy"]
+[ext_resource type="Texture2D" uid="uid://c6yvo5x4cuy4s" path="res://Assets/Extras/contorno.png" id="8_yq2wc"]
+[ext_resource type="Texture2D" uid="uid://ct2wpduve8uux" path="res://Assets/Extras/def_symbol.png" id="9_cafbd"]
+[ext_resource type="Texture2D" uid="uid://coqxxp4nr8w7j" path="res://Assets/Extras/spd_symbol.png" id="10_6k83f"]
+[ext_resource type="Texture2D" uid="uid://cxkalq0mlh3j5" path="res://Assets/Extras/rgn_symbol.png" id="11_cvigl"]
+[ext_resource type="Texture2D" uid="uid://bjke50j5n3du2" path="res://Assets/Extras/cdn_symbol.png" id="12_ir4mm"]
+[ext_resource type="Texture2D" uid="uid://ciofrhdxtr8n3" path="res://Assets/Fundos/carta fundo exemplo.png" id="13_l8csl"]
+[ext_resource type="Texture2D" uid="uid://tjkxfqxhfyt1" path="res://Assets/Extras/CartaHover.png" id="14_uh1wd"]
+
+[node name="CardLayout" type="Control"]
+custom_minimum_size = Vector2(350, 500)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 500.0
+pivot_offset = Vector2(175, 250)
+script = ExtResource("1_mdpow")
+
+[node name="CardImg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iwx14")
+expand_mode = 1
+
+[node name="CardLayout" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dbqi0")
+expand_mode = 1
+
+[node name="Vida" type="Label" parent="."]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 33.0
+offset_bottom = 34.0
+size_flags_vertical = 1
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Organizador" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="OrganizadorNome" type="HBoxContainer" parent="Organizador"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorNome"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="Nome" type="Label" parent="Organizador/OrganizadorNome"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Nome da carta"
+vertical_alignment = 1
+
+[node name="Espacador2" type="MarginContainer" parent="Organizador/OrganizadorNome"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Espacador" type="MarginContainer" parent="Organizador"]
+custom_minimum_size = Vector2(0, 230)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OrganizadorTipagem" type="HBoxContainer" parent="Organizador"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorTipagem"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tipo" type="Label" parent="Organizador/OrganizadorTipagem"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Heroi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Espacador2" type="MarginContainer" parent="Organizador/OrganizadorTipagem"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Separador" type="Label" parent="Organizador/OrganizadorTipagem"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorTipagem"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="ClasseEAlcance" type="Label" parent="Organizador/OrganizadorTipagem"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Mago Ranged"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Espacador3" type="MarginContainer" parent="Organizador/OrganizadorTipagem"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OrganizadorBottom" type="HBoxContainer" parent="Organizador"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom"]
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+
+[node name="OrganizadorParagrafos" type="VBoxContainer" parent="Organizador/OrganizadorBottom"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HabilidadeScroller" type="ScrollContainer" parent="Organizador/OrganizadorBottom/OrganizadorParagrafos"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HabilidadeParagrafo" type="RichTextLabel" parent="Organizador/OrganizadorBottom/OrganizadorParagrafos/HabilidadeScroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Habilidade teste dei"
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorParagrafos"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="FlavorScroller" type="ScrollContainer" parent="Organizador/OrganizadorBottom/OrganizadorParagrafos"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FlavorParagrafo" type="RichTextLabel" parent="Organizador/OrganizadorBottom/OrganizadorParagrafos/FlavorScroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Flavor teste deixoti
+"
+
+[node name="Espacador2" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorParagrafos"]
+custom_minimum_size = Vector2(0, 19)
+layout_mode = 2
+
+[node name="OrganizadorAtt" type="VBoxContainer" parent="Organizador/OrganizadorBottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="OrganizadorAtq" type="HBoxContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AtqSimbolo" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq"]
+layout_mode = 2
+texture = ExtResource("4_dsosr")
+
+[node name="Marginalizador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq"]
+layout_mode = 2
+
+[node name="Posicionador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq/Marginalizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="BarraAtq" type="TextureProgressBar" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq/Marginalizador/Posicionador"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_3ktck")
+texture_over = ExtResource("6_l2kxk")
+texture_progress = ExtResource("7_v0aqy")
+
+[node name="Borda" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq/Marginalizador"]
+layout_mode = 2
+texture = ExtResource("8_yq2wc")
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorAtq"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OrganizadorDef" type="HBoxContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DefSimbolo" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef"]
+layout_mode = 2
+texture = ExtResource("9_cafbd")
+
+[node name="Marginalizador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef"]
+layout_mode = 2
+
+[node name="Posicionador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef/Marginalizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="BarraDef" type="TextureProgressBar" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef/Marginalizador/Posicionador"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_3ktck")
+texture_over = ExtResource("6_l2kxk")
+texture_progress = ExtResource("7_v0aqy")
+
+[node name="Borda" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef/Marginalizador"]
+layout_mode = 2
+texture = ExtResource("8_yq2wc")
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorDef"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OrganizadorSpd" type="HBoxContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpdSimbolo" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd"]
+layout_mode = 2
+texture = ExtResource("10_6k83f")
+
+[node name="Marginalizador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd"]
+layout_mode = 2
+
+[node name="Posicionador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd/Marginalizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="BarraSpd" type="TextureProgressBar" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd/Marginalizador/Posicionador"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_3ktck")
+texture_over = ExtResource("6_l2kxk")
+texture_progress = ExtResource("7_v0aqy")
+
+[node name="Borda" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd/Marginalizador"]
+layout_mode = 2
+texture = ExtResource("8_yq2wc")
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorSpd"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OrganizadorRgn" type="HBoxContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RgnSimbolo" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn"]
+layout_mode = 2
+texture = ExtResource("11_cvigl")
+
+[node name="Marginalizador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn"]
+layout_mode = 2
+
+[node name="Posicionador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn/Marginalizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="BarraRgn" type="TextureProgressBar" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn/Marginalizador/Posicionador"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_3ktck")
+texture_over = ExtResource("6_l2kxk")
+texture_progress = ExtResource("7_v0aqy")
+
+[node name="Borda" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn/Marginalizador"]
+layout_mode = 2
+texture = ExtResource("8_yq2wc")
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorRgn"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OrganizadorCdn" type="HBoxContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CdnSimbolo" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn"]
+layout_mode = 2
+texture = ExtResource("12_ir4mm")
+
+[node name="Marginalizador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn"]
+layout_mode = 2
+
+[node name="Posicionador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn/Marginalizador"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="BarraCdn" type="TextureProgressBar" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn/Marginalizador/Posicionador"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_3ktck")
+texture_over = ExtResource("6_l2kxk")
+texture_progress = ExtResource("7_v0aqy")
+
+[node name="Borda" type="TextureRect" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn/Marginalizador"]
+layout_mode = 2
+texture = ExtResource("8_yq2wc")
+
+[node name="espacador" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt/OrganizadorCdn"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Organizador/OrganizadorBottom/OrganizadorAtt"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Cardfundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_l8csl")
+expand_mode = 1
+
+[node name="MouseFocus" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_hover = ExtResource("14_uh1wd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="MouseFocus" to="." method="_on_mouse_focus_mouse_entered"]
+[connection signal="mouse_exited" from="MouseFocus" to="." method="_on_mouse_focus_mouse_exited"]
